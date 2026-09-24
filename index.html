@@ -139,17 +139,6 @@
           : "Processamento local via regras gramaticais e conectores de processo BPMN.";
       });
 
-      // Inicializar Miro SDK se estiver dentro do iframe do Miro
-      if (typeof miro !== 'undefined' && miro.board) {
-        try {
-          await miro.board.ui.on('icon:click', async () => {
-            await miro.board.ui.openPanel({ url: 'miro_bpmn_app.html' });
-          });
-        } catch (e) {
-          console.log("Inicializando painel do Miro.");
-        }
-      }
-    });
 
     document.getElementById('btnLoadExample').onclick = () => {
       document.getElementById('processText').value = SAMPLE_TEXT;
